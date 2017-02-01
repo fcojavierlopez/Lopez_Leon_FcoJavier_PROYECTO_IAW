@@ -1,3 +1,17 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Home</title>
+
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, minimum-scale=1.0">
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+
+  </head>
+  <body>
+
+
+
 <?php
 session_start();
 ?>
@@ -27,8 +41,20 @@ if ($result->num_rows > 0) {
     $_SESSION['TIPO_USUARIO'] = $obj->TIPO_USUARIO;
     $_SESSION['NOMBRE'] = $obj->NOMBRE;
 
+
+
       echo "Bienvenido " .$_SESSION['NOMBRE'];
-      echo "<br><br><a href=logout.php>Cerrar Sesión</a>";
+      echo "<br><br>";
+      echo "Actualmente esta página está en construcción";
+
+      if (isset($email) && $obj->TIPO_USUARIO == '1') {
+
+        echo "<br><a href='control_panel.php'>Edición</a>";
+        echo "<br>";
+
+       }
+
+       echo "<br><br><a href=logout.php>Cerrar Sesión</a>";
 
 
  } else {
@@ -38,3 +64,9 @@ if ($result->num_rows > 0) {
  }
  mysqli_close($connection);
  ?>
+ <br><br>
+<!-- <input type="button" class="btn btn-primary" value="Cerrar Sesión" onclick = "location='./logout.php'"/> -->
+ <script src="../js/jquery.js"></script>
+ <script src="../js/bootstrap.min.js"></script>
+</body>
+</html>
