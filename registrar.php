@@ -12,7 +12,7 @@
 
   <style>
       body {
-          background-image: url("../fondo_login_5.jpg");
+          background-image: url("../img/fondo_login_5.jpg");
           background-color: #cccccc;
           background-size: 100%;
           background-repeat: no-repeat;
@@ -74,13 +74,6 @@
 
           <input type="submit" class="btn btn-primary" value="Registrarse">
 
-
-          <!--<span>email:</span><input type="text" name="email" required><br>
-          <span>contraseña:</span><input type="password" name="password" required><br>
-          <span>Edad:</span><input type="text" name="edad" required><br>
-          <span>apellidos:</span><input type="text" name="apellidos" required><br>
-          <span>Nombre:</span><input type="text" name="nombre" required><br><br>
-          <span><input type="submit" value="REGISTRARSE"><br>-->
         </fieldset>
       </form>
   </div>

@@ -1,4 +1,7 @@
 <!DOCTYPE html>
+<?php
+session_start();
+?>
 <html>
   <head>
     <meta charset="utf-8">
@@ -10,7 +13,7 @@
   </head>
   <style>
       body {
-          background-image: url("../fondo_login_5.jpg");
+          background-image: url("../img/fondo_login_5.jpg");
           background-color: #cccccc;
           background-size: 100%;
           background-repeat: no-repeat;
@@ -36,7 +39,7 @@
         <div class="topbar">
           <div class="spanColor"></div>
         <label>Correo Electrónico</label><br>
-        <input name="email" type="text" class="input" id="email" placeholder="Email" required>
+        <input name="email" type="email" class="input" id="email" placeholder="Email" required>
         <br><br>
 
         <label>Contraseña</label><br>

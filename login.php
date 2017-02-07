@@ -12,11 +12,11 @@
 
 
 
-<?php
-session_start();
-?>
+
 
 <?php
+session_start();
+
 //conexion
 $connection = new mysqli('localhost', 'administrador', '2asirtriana', 'ventaentradas');
 
@@ -24,6 +24,9 @@ $connection = new mysqli('localhost', 'administrador', '2asirtriana', 'ventaentr
 if ($connection->connect_error) {
  die("Error de conexión: ". $connection->connect_error);
 }
+//Comprobacion de login
+if (isset($_POST['email'])) {
+
 
 $email = $_POST['email'];
 $password = $_POST['password'];
@@ -42,12 +45,25 @@ if ($result->num_rows > 0) {
     $_SESSION['NOMBRE'] = $obj->NOMBRE;
 
 
+}
+else {
+  echo "Email o Contraseña son incorrectos.";
+
+  echo "<br><a href='index.html'>Volver a Intentarlo</a>";
+}
+
+}
+//TERmina comprobacion
+//Comprobar que se esta intentando conectarse
+if ($_SESSION['TIPO_USUARIO']==NULL) {
+  header ("Location: index.html");
+}
 
       echo "Bienvenido " .$_SESSION['NOMBRE'];
       echo "<br><br>";
-      echo "Actualmente esta página está en construcción";
+      echo "Actualmente esta página está en construcción<br>";
 
-      if (isset($email) && $obj->TIPO_USUARIO == '1') {
+      if ($_SESSION['TIPO_USUARIO']== '1') {
 
         echo "<br><a href='control_panel.php'>Edición</a>";
         echo "<br>";
@@ -57,12 +73,9 @@ if ($result->num_rows > 0) {
        echo "<br><br><a href=logout.php>Cerrar Sesión</a>";
 
 
- } else {
-   echo "Email o Contraseña son incorrectos.";
 
-   echo "<br><a href='index.html'>Volver a Intentarlo</a>";
- }
  mysqli_close($connection);
+
  ?>
  <br><br>
 <!-- <input type="button" class="btn btn-primary" value="Cerrar Sesión" onclick = "location='./logout.php'"/> -->

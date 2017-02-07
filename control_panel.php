@@ -1,12 +1,18 @@
 <?php
 session_start();
 
-if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) {
+/*if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) {
 
 } else {
   header ("Location: ./index.html");
 exit;
-}
+}*/
+
+/*if ($_SESSION['TIPO_USUARIO']!=='1') {
+  session_destroy();
+  header("Location: index.html");
+}*/
+
 ?>
 
 <!DOCTYPE html>
@@ -22,7 +28,7 @@ exit;
 
 <style>
     body {
-        background-image: url("../fondo_login_5.jpg");
+        background-image: url("../img/fondo_login_5.jpg");
         background-color: #cccccc;
         background-size: 100%;
         background-repeat: no-repeat;
@@ -49,8 +55,12 @@ exit;
 <h3>EDICIÓN</h3>
 
   <ul>
-  <li><a href="">Usuarios</a></li>
+  <li><a href="../administrador/editar_usuario.php">Usuarios</a></li>
+  <li><a href="../artistas/editar_artista.php">Artistas</a></li>
   <li><a href="">Eventos</a></li>
+  <li><a href="">Localidades</a></li>
+  <li><a href="">Asistencias</a></li>
+  <li><a href="">Compras</a></li>
 </ul>
 
 <br><br>
