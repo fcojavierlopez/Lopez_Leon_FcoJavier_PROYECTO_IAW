@@ -46,13 +46,11 @@
 
         ?>
 
-          <div class='col-md-offset-2 col-md-8'>
+          <div class='col-md-offset-2 col-md-10'>
             <input type='submit' class='btn btn-primary' name='send' value='Actualizar'>
-            <a class="btn btn-primary" href="editar_artista.php" role="button">cancelar</a>
-          </from>
+            <a class="btn btn-primary" href="editar_artista.php" role="button">Cancelar</a>
+          </form>
           </div>
-        </div>
-      </div>
 
       <?php
       } else {
@@ -86,6 +84,9 @@
       }
       unset($connection);
       ?>
+
+    </div>
+    </div>
 
       <script src="../js/jquery.js"></script>
       <script src="../js/bootstrap.min.js"></script>
