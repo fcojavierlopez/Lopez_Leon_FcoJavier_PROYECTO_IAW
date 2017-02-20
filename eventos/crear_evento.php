@@ -93,9 +93,10 @@
               // var_dump($result);
 
               if ($result) {
-                echo "Nueva Localidad añadida";
+                echo "<br>";
+                echo "<h3 class='text-center'>Evento añadido</h3>";
                 echo '<br>';
-                echo '<META HTTP-EQUIV="Refresh" CONTENT="2; URL=editar_eventos.php">';
+                echo '<META HTTP-EQUIV="Refresh" CONTENT="3; URL=editar_eventos.php">';
               }
 
               if (!$result) {

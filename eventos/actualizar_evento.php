@@ -75,7 +75,7 @@
           <a class="btn btn-primary" href="editar_eventos.php" role="button">Cancelar</a>
         </div>
 
-        </from>
+        </form>
           </div>
         </div>
         <br>
