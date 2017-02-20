@@ -41,13 +41,23 @@ th {
     if ($resultado = $connection->query('SELECT ID_LUGAR, LOCALIDAD, PROVINCIA, PAIS, LATITUD, LONGITUD FROM lugar;')) {
 
     ?>
+    <div class="col-md-offset-5 col-md-5">
+        <h2>Localidades</h2>
+    </div>
+    <br>
+    <div class="col-md-offset-7 col-md-6">
+      <a class="btn btn-primary" href="nueva_localidad.php" role="button">Añadir Nueva Localidad</a>
+      <a class="btn btn-primary" href="../usuarios/control_panel.php" role="button">Panel de Control</a>
+      <a class="btn btn-primary" href="../usuarios/logout.php" role="button">Cerrar Sesión</a>
+    <br><br>
+    </div>
 
     <div class="container">
     <div class="col-md-offset-1 col-md-10">
     <div class="table-responsive">
     <table class="table table-hover">
       <thead>
-        <tr>
+        <tr class="warning">
           <th>ID Localidad</th>
           <th>Localidad</th>
           <th>Provincia</th>
@@ -96,11 +106,6 @@ th {
     </div>
   </div>
 </div>
-<br>
-
-<a class="btn btn-primary" href="nueva_localidad.php" role="button">Añadir Nueva Localidad</a>
-<a class="btn btn-primary" href="../usuarios/control_panel.php" role="button">Panel de Control</a>
-<a class="btn btn-primary" href="../usuarios/logout.php" role="button">Cerrar Sesión</a>
 
 
   <script src="../js/jquery.js"></script>

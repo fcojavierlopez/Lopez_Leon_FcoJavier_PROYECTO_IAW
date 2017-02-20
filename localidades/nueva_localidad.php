@@ -3,6 +3,8 @@
   <head>
     <meta charset="utf-8">
     <title>Nueva Localidad</title>
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, minimum-scale=1.0">
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
   </head>
   <body>
     <?php
@@ -13,17 +15,25 @@
       }
 
       if (!isset($_POST["localidad"])) : ?>
+
+      <div class="container">
+      <div class="col-md-offset-4 col-md-4">
+        <br>
         <form method="post">
           <fieldset>
             <legend>Nueva Localidad</legend>
-            <span>Localidad </span><input type="text" name="localidad" ><br>
-            <span>Provincia </span><input type="text" name="provincia" ><br>
-            <span>País </span><input type="text" name="pais" ><br>
-            <span>Latitud </span><input type="text" name="latitud"><br>
-            <span>Longitud </span><input type="text" name="longitud"><br>
+            <span>Localidad </span><input class="form-control" type="text" name="localidad" ><br>
+            <span>Provincia </span><input class="form-control" type="text" name="provincia" ><br>
+            <span>País </span><input class="form-control" type="text" name="pais" ><br>
+            <span>Latitud </span><input class="form-control" type="text" name="latitud"><br>
+            <span>Longitud </span><input class="form-control" type="text" name="longitud"><br>
 
-	          <input type="submit" value="Añadir" name="send">
-            <input type="button" value="Volver" onClick="location.href='editar_localidades.php'" />
+            <br>
+
+            <div class="col-md-offset-3">
+	          <input class="btn btn-primary" type="submit" value="Añadir" name="send">
+            <a class="btn btn-primary" href="editar_localidades.php" role="button">Cancelar</a>
+            </div>
 	         </fieldset>
          <?php else: ?>
          <?php
@@ -52,8 +62,8 @@
               // var_dump($result);
 
               if ($result) {
-                echo "Nueva Localidad añadida";
-                echo '<br>';
+                echo "<br>";
+                echo "<h3 class='text-center'>Nueva Localidad añadida</h3>";
                 echo '<META HTTP-EQUIV="Refresh" CONTENT="2; URL=editar_localidades.php">';
               }
 
@@ -61,15 +71,20 @@
                 echo "Error al añadir la nueva localidad, inténtelo de nuevo.";
                 var_dump($query);
                 echo '<br>';
-                echo '<META HTTP-EQUIV="Refresh" CONTENT="2; URL=nueva_localidad.php">';
+                echo '<META HTTP-EQUIV="Refresh" CONTENT="3; URL=nueva_localidad.php">';
               }
 
             }
 
            ?>
 
+         </div>
+       </div>
+
           <?php endif ?>
 
+    <script src="../js/jquery.js"></script>
+    <script src="../js/bootstrap.min.js"></script>
   </body>
 
 </html>
