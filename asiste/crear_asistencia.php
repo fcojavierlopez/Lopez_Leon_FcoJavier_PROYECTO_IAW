@@ -3,6 +3,8 @@
   <head>
     <meta charset="utf-8">
     <title>Nueva Asistencia</title>
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, minimum-scale=1.0">
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
   </head>
   <body>
     <?php
@@ -29,12 +31,18 @@
       $resultado2 = $connection->query($query3);
 
        ?>
+
+       <br><br><br>
+
+       <div class="container">
+       <div class="col-md-offset-4 col-md-4">
+
         <form method="post">
           <fieldset>
             <legend>Nueva Asistencia</legend>
 
             <span>Eventos</span>
-            <select id="evento" name="evento" class = "evento" required>
+            <select class="form-control" id="evento" name="evento" class = "evento" required>
               <?php
               while ( $row = $resultado->fetch_array() )
               {
@@ -49,7 +57,7 @@
             </select><br><br>
 
             <span>Artistas</span>
-            <select id="artista" name="artista" class = "artista" required>
+            <select class="form-control" id="artista" name="artista" class = "artista" required>
               <?php
               while ( $row2 = $resultado2->fetch_array() )
               {
@@ -61,9 +69,13 @@
                 <?php
                 }
                 ?>
-            </select><br><br>
-	          <input type="submit" value="Crear" name="send">
-            <input type="button" value="Volver" onClick="location.href='editar_asiste.php'" />
+            </select><br><br><br>
+
+            <div class="col-md-offset-3 col-md-10">
+	          <input class="btn btn-primary" type="submit" value="Crear" name="send">
+            <a class="btn btn-primary" href="editar_asiste.php" role="button">Cancelar</a>
+            </div>
+
 	         </fieldset>
          <?php else: ?>
          <?php
@@ -90,15 +102,15 @@
               // var_dump($result);
 
               if ($result) {
-                echo "Nueva Asistencia Creada";
                 echo '<br>';
+                echo "<h3 class='text-center'>Nueva Asistencia Creada</h3>";
                 echo '<META HTTP-EQUIV="Refresh" CONTENT="2; URL=editar_asiste.php">';
               }
 
               if (!$result) {
-                echo "Error al añadir la nueva Asistencia, inténtelo de nuevo.";
-                var_dump($query);
                 echo '<br>';
+                echo "<h3 class='text-center'>Error al añadir la nueva Asistencia, inténtelo de nuevo.</h3>";
+                var_dump($query);
                 echo '<META HTTP-EQUIV="Refresh" CONTENT="10; URL=crear_asistencia.php">';
               }
 
@@ -106,8 +118,13 @@
 
            ?>
 
+        </div>
+        </div>
+
           <?php endif ?>
 
+    <script src="../js/jquery.js"></script>
+    <script src="../js/bootstrap.min.js"></script>
   </body>
 
 </html>

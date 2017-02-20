@@ -4,7 +4,8 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Actualizar Asistencia</title>
-    <link rel="stylesheet" type="text/css" href=" ">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, minimum-scale=1.0">
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
     </head>
     <body>
 
@@ -36,12 +37,18 @@
         where ID_EVENTO = '$id';")) {
         $obj = $result->fetch_object();
 
+        echo "<br><br><br>";
+
+        echo "<div class='container-fluid'>";
+        echo "<div class='col-md-offset-4 col-md-3'>";
+
         echo "<form method='post'>";
 
-        echo "<span>Evento</span>";
         ?>
+
         <fieldset>
           <legend>Nueva Asistencia</legend>
+          <br>
 
           <span>Eventos</span>
           <select id="evento" name="evento" class = "evento" required>
@@ -56,7 +63,9 @@
               <?php
               }
               ?>
-          </select><br><br>
+          </select>
+
+          <br><br><br><br>
 
           <span>Artistas</span>
           <select id="artista" name="artista" class = "artista" required>
@@ -76,13 +85,16 @@
 
         <?php
         echo "<br><br>";
-        echo "<input type='submit' name='send' value='Actualizar'>";
+
         ?>
 
-        <input type="button" class="btn btn-primary" value="Volver" onclick = "location='editar_asiste.php'"/>
+        <div class="col-md-offset-2 col-md-10">
+        <input class="btn btn-primary" type='submit' name='send' value='Actualizar'>
+        <a class="btn btn-primary" href="editar_asiste.php" role="button">Cancelar</a>
+        </div>
 
         <?php
-        echo "</from>";
+        echo "</form>";
       } else {
 
             echo "Error: " . $result . "<br>" . mysqli_error($connection);
@@ -111,6 +123,12 @@
       }
       unset($connection);
       ?>
-      <script type="text/javascript" src=" "></script>
+
+    </div>
+    </div>
+
+
+      <script src="../js/jquery.js"></script>
+      <script src="../js/bootstrap.min.js"></script>
     </body>
 </html>
