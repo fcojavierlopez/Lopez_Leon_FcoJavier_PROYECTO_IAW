@@ -73,7 +73,8 @@
               $result = $connection->query($query);
 
               if ($result) {
-                echo "Nuevo Usuario Creado";
+                echo "<br>";
+                echo "<h3 class='text-center'>Nuevo Usuario Creado</h3>";
                 echo '<br>';
                 echo '<META HTTP-EQUIV="Refresh" CONTENT="2; URL=editar_usuario.php">';
               }
