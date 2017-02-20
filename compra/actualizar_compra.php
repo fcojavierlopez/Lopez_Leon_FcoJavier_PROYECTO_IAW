@@ -3,8 +3,9 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Actualizar Evento</title>
-    <link rel="stylesheet" type="text/css" href=" ">
+    <title>Actualizar Compras</title>
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, minimum-scale=1.0">
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
     </head>
     <body>
 
@@ -35,15 +36,21 @@
 
         $obj = $result->fetch_object();
 
+        echo "<br><br>";
+
+
+        echo "<div class='container-fluid'>";
+        echo "<div class='col-md-offset-4 col-md-3'>";
+
         echo "<form method='post'>";
 
-        echo "";
-        echo "<span>Email</span><input name='email' value='$obj->CORREO_ELECTRONICO' required \><br><br>";
+        echo "<legend>Actualizar Compras</legend>";
+        echo "<span>Email</span><input class='form-control' name='email' value='$obj->CORREO_ELECTRONICO' required \><br><br>";
         ?>
 
         <span>Evento</span>
 
-        <select id="evento" name="evento" class = "evento" required>
+        <select class='form-control' id="evento" name="evento" class = "evento" required>
           <?php
           while ( $row = $resultado->fetch_array() )
           {
@@ -55,16 +62,19 @@
             }
 
         echo "</select><br><br>";
-        echo "Numero Entradas <input name='numentradas' value='$obj->NUMERO_ENTRADAS' required \><br>";
+        echo "Numero Entradas <input class='form-control' name='numentradas' value='$obj->NUMERO_ENTRADAS' required \><br>";
 
         echo "<br><br>";
-        echo "<input type='submit' name='send' value='Actualizar'>";
+
         ?>
 
-        <input type="button" class="btn btn-primary" value="Volver" onclick = "location='editar_compra.php'"/>
+        <div class="col-md-offset-2 col-md-10">
+        <input class="btn btn-primary" type='submit' name='send' value='Actualizar'>
+        <a class="btn btn-primary" href="editar_compra.php" role="button">Cancelar</a>
+        </div>
 
         <?php
-        echo "</from>";
+        echo "</form>";
       } else {
 
             echo "Error: " . $result . "<br>" . mysqli_error($connection);
@@ -94,6 +104,11 @@
       }
       unset($connection);
       ?>
-      <script type="text/javascript" src=" "></script>
+
+    </div>
+    </div>
+
+      <script src="../js/jquery.js"></script>
+      <script src="../js/bootstrap.min.js"></script>
     </body>
 </html>

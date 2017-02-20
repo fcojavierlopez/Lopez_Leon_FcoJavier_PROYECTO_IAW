@@ -44,8 +44,18 @@ th {
 
     ?>
 
+    <div class="col-md-offset-5 col-md-5">
+        <h2>Compras</h2>
+    </div>
+    <br>
+    <div class="col-md-offset-8 col-md-4">
+      <a class="btn btn-primary" href="../usuarios/control_panel.php" role="button">Panel de Control</a>
+      <a class="btn btn-primary" href="../usuarios/logout.php" role="button">Cerrar Sesión</a>
+    </div>
+
     <div class="container">
     <div class="col-md-offset-1 col-md-10">
+      <br>
     <div class="table-responsive">
     <table class="table table-hover">
       <thead>
@@ -100,11 +110,6 @@ th {
       </div>
     </div>
   </div>
-
-  <br>
-  
-  <a class="btn btn-primary" href="../usuarios/control_panel.php" role="button">Panel de Control</a>
-  <a class="btn btn-primary" href="../usuarios/logout.php" role="button">Cerrar Sesión</a>
 
   <script src="../js/jquery.js"></script>
   <script src="../js/bootstrap.min.js"></script>
