@@ -13,6 +13,14 @@ table {
   border-collapse: collapse;
 
 }
+
+th {
+  text-align: center;
+}
+
+h3 {
+  text-align: center;
+}
   </style>
 
   <body>
@@ -34,6 +42,8 @@ table {
         exit();
     }
 
+    include 'barra_menu_perfil.php';
+
     $id=$_SESSION['CORREO_ELECTRONICO'];
 
     $query2 = "SELECT COUNT(compra.ID_EVENTO) as Num_Compras, SUM(compra.NUMERO_ENTRADAS) as Total_Entradas_Compradas
@@ -46,7 +56,12 @@ table {
     if ($resultado = $connection->query("SELECT CORREO_ELECTRONICO, FECHA_ALTA, EDAD, APELLIDOS, NOMBRE FROM usuarios where CORREO_ELECTRONICO = '$id';")) {
   ?>
 
-    <?php
+  <div class="col-md-offset-1 col-md-4 table-responsive">
+
+  <?php
+
+      echo "<br><br><br><br>";
+
                   echo "<ul>";
 
               //Hacemos un fetch y búble mediante while para recorrer el array.
@@ -62,8 +77,8 @@ table {
 
                   /*Insertamos los iconos con su hipervínculo el cual nos redigirirá hacia la página
                   que le hemos indicado en el href.*/
-                  echo "<br><br>";
-                  echo '<td><a title="actualizar" href="actualizar_perfil_usuario.php?id='.$objeto->CORREO_ELECTRONICO.'">actualizar Perfil</a></td>';
+                  // echo "<br><br>";
+                  echo '<td><a class="btn btn-primary" title="actualizar" href="actualizar_perfil_usuario.php?id='.$objeto->CORREO_ELECTRONICO.'">actualizar Perfil</a></td>';
 
               }
 
@@ -76,12 +91,11 @@ table {
      ?>
 
    </ul>
-   <br>
 
-   <table border="2">
+   <table class="table table-bordered">
      <h3>Historial de Compras y Asistencias</h3><br>
    <thead>
-     <tr>
+     <tr class="success">
        <th>Compras y Asistencias</th>
        <th>Total Entradas Compradas</th>
 
@@ -113,12 +127,7 @@ table {
 
   ?>
   </table>
-  <br>
-
-  <input type="button" class="btn btn-primary" value="Cerrar Sesión" onclick = "location='../usuarios/logout.php'"/>
-  <input type="button" class="btn btn-primary" value="Volver a Home" onclick = "location='../usuarios/home.php'"/>
-
-    <!-- <h1>PERFIL USUARIO MODO PRUEBA</h1> -->
+</div>
 
   </body>
 </html>

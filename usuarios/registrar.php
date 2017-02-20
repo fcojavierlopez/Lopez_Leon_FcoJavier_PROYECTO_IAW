@@ -30,13 +30,11 @@
 
       <h3 class="text-center">FORMULARIO DE REGISTRO</h3>
 
-  </header>
+    </header>
 
-  <div class="container-fluid">
-  </div>
-  </div>
+    </div>
 
-
+  <h3 class="text-center">Nuevo Usuario</h3>
 
     <?php
   if (!isset($_POST["email"])) : ?>
@@ -46,7 +44,7 @@
 
       <form method="post">
         <fieldset>
-          <h4>Nuevo Usuario</h4>
+
           <br>
 
           <div class="forceColor"></div>
@@ -73,6 +71,7 @@
           <br><br>
 
           <input type="submit" class="btn btn-primary" value="Registrarse">
+          <a class="btn btn-primary" href="index.html">Cancelar</a>
 
         </fieldset>
       </form>
@@ -81,7 +80,7 @@
     <?php else: ?>
 
       <?php
-          echo "<h3>Formulario de Registro</h3>";
+
           //conexion a la base de datos
           $connection = new mysqli("localhost", "administrador", "2asirtriana", "ventaentradas");
 
@@ -98,12 +97,22 @@
    $result = $connection->query($query);
 
    if ($result) {
-     echo "Usuario Registrado ";
-     echo "<br><a href='index.html'>Ir a Inicio de Sesión</a>";
-         } else {
-     echo " Datos incorrectos.";
-     echo "<br><br><a href='registrar.php'>Volver al Formulario de Registro</a>";
+
+    echo "<div class='col-md-offset-5'>";
+
+     echo "<h3>Usuario Registrado</h3>";
+     echo '<META HTTP-EQUIV="Refresh" CONTENT="3; URL=index.html">';
+
+    echo "</div>";
+
+    } else {
+
+     echo "<h3 class='text-center'>Datos incorrectos</h3>";
+     echo "<br>";
+     echo "<h3 class='text-center'>Usuario ya Registrado</h3>";
+     echo '<META HTTP-EQUIV="Refresh" CONTENT="4; URL=registrar.php">';
         }
+
    mysqli_close($connection);
    ?>
     <?php endif ?>
