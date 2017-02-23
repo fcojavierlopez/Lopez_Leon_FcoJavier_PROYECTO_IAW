@@ -59,7 +59,7 @@
       <?php
       } else {
 
-            echo "Error: " . $result . "<br>" . mysqli_error($connection);
+            echo "Error: ".$result."<br>".mysqli_error($connection);
       }
 
       unset($obj);

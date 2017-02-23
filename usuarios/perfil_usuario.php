@@ -21,6 +21,11 @@ th {
 h3 {
   text-align: center;
 }
+
+.evita_menu {
+  margin-top: 50px;
+  padding: 50px;
+}
   </style>
 
   <body>
@@ -56,11 +61,14 @@ h3 {
     if ($resultado = $connection->query("SELECT CORREO_ELECTRONICO, FECHA_ALTA, EDAD, APELLIDOS, NOMBRE FROM usuarios where CORREO_ELECTRONICO = '$id';")) {
   ?>
 
-  <div class="col-md-offset-1 col-md-4 table-responsive">
+  <div class="row evita_menu">
+  <div class="col-md-offset-1 col-md-4">
+
+    <h3>Datos de <?php echo $_SESSION['NOMBRE'] ?></h3>
 
   <?php
 
-      echo "<br><br><br><br>";
+      echo "<br>";
 
                   echo "<ul>";
 
@@ -91,7 +99,9 @@ h3 {
      ?>
 
    </ul>
+</div>
 
+  <div class=" col-md-5">
    <table class="table table-bordered">
      <h3>Historial de Compras y Asistencias</h3><br>
    <thead>
@@ -126,8 +136,12 @@ h3 {
   }
 
   ?>
-  </table>
+    </table>
+  </div>
 </div>
+  <br>
 
-  </body>
+   <script src="../js/jquery.js"></script>
+   <script src="../js/bootstrap.min.js"></script>
+</body>
 </html>

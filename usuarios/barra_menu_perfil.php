@@ -15,6 +15,7 @@
     }
     ?>
     <div class="container">
+    <div class="row">
     <nav role="navigation" class="navbar navbar-inverse navbar-fixed-top">
         <div class="navbar-header">
             <button type="button" data-target="#navbarCollapse" data-toggle="collapse" class="navbar-toggle">
@@ -59,9 +60,3 @@
         </div>
       </nav>
     </div>
-    <br>
-
-     <script src="../js/jquery.js"></script>
-     <script src="../js/bootstrap.min.js"></script>
-  </body>
-</html>
