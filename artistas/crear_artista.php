@@ -45,9 +45,9 @@
          //Temp file. Where the uploaded file is stored temporary
          $tmp_file = $_FILES['imagen']['tmp_name'];
          //Dir where we are going to store the file
-         $target_dir = "img/img_artistas/";
+         $target_dir = "../img/img_artistas/";
          //Full name of the file.
-         $target_file = strtolower($target_dir . basename($_FILES['imagen']['nombre']));
+         $target_file = strtolower($target_dir . basename($_FILES['imagen']['name']));
          //Can we upload the file
          $valid= true;
          //Check if the file already exists
@@ -66,12 +66,11 @@
            $valid = false;
            echo "Only JPG, JPEG, PNG & GIF files are allowed";
          }
+
          if ($valid) {
            var_dump($target_file);
            //Put the file in its place
            move_uploaded_file($tmp_file, $target_file);
-           echo "PRODUCT ADDED";
-
 
           // variable que contiene la conexión a la BBDD.
            $connection = new mysqli('localhost', 'administrador', '2asirtriana', 'ventaentradas');
@@ -93,11 +92,11 @@
 
 
               $query= "INSERT INTO artista (`NOMBRE`,`GENERO`,`DESCRIPCION`,`IMAGEN`,`URL`)
-              VALUES('$nombre','$genero','$descripcion',NULL,'$enlace')";
-              var_dump($query);
+              VALUES('$nombre','$genero','$descripcion','".$_FILES['imagen']['name']."','$enlace')";
+              // var_dump($query);
 
               $result = $connection->query($query);
-              var_dump($result);
+              // var_dump($result);
               if ($result) {
 
                 echo "<br>";
