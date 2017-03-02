@@ -16,7 +16,7 @@
 
     ?>
 
-    <div class="container">
+
     <nav role="navigation" class="navbar navbar-inverse navbar-fixed-top">
         <div class="navbar-header">
             <button type="button" data-target="#navbarCollapse" data-toggle="collapse" class="navbar-toggle">
@@ -40,7 +40,6 @@
                   <ul role="menu" class="dropdown-menu">
                     <li><a href="monologos.php">Monólogos</a></li>
                     <li><a href="musicales.php">Musicales</a></li>
-                    <li><a href="teatro.php">Teatro</a></li>
                   </ul>
                 </li>
 
@@ -72,4 +71,4 @@
             </form>
         </div>
       </nav>
-    </div>
+    

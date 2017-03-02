@@ -5,10 +5,9 @@
     <title>Conciertos</title>
     <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, minimum-scale=1.0">
     <link rel="stylesheet" href="../css/bootstrap.min.css">
+    <link rel="stylesheet" href="../css/eventos.css">
   </head>
   <body>
-
-
 
     <?php
 
@@ -41,13 +40,18 @@
                                                                JOIN artista ON asiste.ID_ARTISTA = artista.ID_ARTISTA
                                                   where eventos.TIPO ='concierto'";
 
-  echo "<div>";
+  echo "<div id='concierto'>";
 
     if ($resultado = $connection->query($query)){
         while ($objeto = $resultado->fetch_object()) {
 
-          echo'<a href="info_artista.php?id='.$objeto->NOMBRE.'">'.$objeto->NOMBRE.'<a/><br><br>';
+        echo "<div class='artista'>";
 
+
+        echo "<center><img src='../img/img_artistas/$objeto->IMAGEN' />";
+
+          echo'<h3><a href="info_artista.php?id='.$objeto->NOMBRE.'">'.$objeto->NOMBRE.'<a/></h3></center>';
+        echo "</div>";
         }
         //Cerramos el array.
         $resultado->close();
