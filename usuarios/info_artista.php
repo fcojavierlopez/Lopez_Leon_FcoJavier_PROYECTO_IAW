@@ -33,7 +33,7 @@
       $query="SELECT artista.NOMBRE, artista.DESCRIPCION, artista.IMAGEN, eventos.PRECIO, artista.ID_ARTISTA, eventos.FECHA_INICIO FROM artista join asiste on artista.ID_ARTISTA = asiste.ID_ARTISTA join eventos on asiste.ID_EVENTO = eventos.ID_EVENTO
       where artista.NOMBRE='$id' and eventos.NOMBRE='$id'";
 
-      $query2="SELECT artista.NOMBRE, eventos.PRECIO, eventos.FECHA_INICIO, lugar.LOCALIDAD, artista.ID_ARTISTA FROM artista join asiste on artista.ID_ARTISTA = asiste.ID_ARTISTA join eventos on asiste.ID_EVENTO = eventos.ID_EVENTO join lugar on eventos.ID_LUGAR = lugar.ID_LUGAR
+      $query2="SELECT artista.NOMBRE, eventos.PRECIO, eventos.FECHA_INICIO, lugar.LOCALIDAD, artista.ID_ARTISTA, artista.URL FROM artista join asiste on artista.ID_ARTISTA = asiste.ID_ARTISTA join eventos on asiste.ID_EVENTO = eventos.ID_EVENTO join lugar on eventos.ID_LUGAR = lugar.ID_LUGAR
       where artista.NOMBRE='$id' and eventos.NOMBRE='$id'";
 
       if ($resultado = $connection->query($query)){
@@ -60,6 +60,7 @@
     <th>Ciudad</th>
     <th>Fecha</th>
     <th>Precio</th>
+    <th>WEB</th>
     <th>Comprar</th>
   </tr>
 </thead>
@@ -73,6 +74,7 @@ if ($result = $connection->query($query2)){
       echo '<td>'.$objeto->LOCALIDAD.'</td>';
       echo '<td>'.$objeto->FECHA_INICIO.'</td>';
       echo '<td>'.$objeto->PRECIO.' €</td>';
+      echo "<td><a href='$objeto->URL'><img width='40' height='40' src='../img/img_edicion/nueva_ventana.png' alt='enlace'/></a></td>";
       echo '<td><a class="btn btn-success" title="comprar" href="compra.php?id='.$objeto->ID_ARTISTA.'">Comprar</a></td>';
 ?>
 

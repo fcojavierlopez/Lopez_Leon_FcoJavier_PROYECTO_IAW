@@ -31,7 +31,7 @@
 
       $id=$_GET['id'];
 
-      $query="SELECT eventos.NOMBRE, eventos.FECHA_INICIO, eventos.FECHA_FIN, lugar.LOCALIDAD, eventos.PRECIO FROM eventos join lugar on eventos.ID_LUGAR = lugar.ID_LUGAR WHERE eventos.NOMBRE='$id'";
+      $query="SELECT eventos.NOMBRE, eventos.FECHA_INICIO, eventos.FECHA_FIN, lugar.LOCALIDAD, eventos.PRECIO, eventos.ID_EVENTO FROM eventos join lugar on eventos.ID_LUGAR = lugar.ID_LUGAR WHERE eventos.NOMBRE='$id'";
 
 
 
@@ -54,7 +54,7 @@
       echo "<h4>Precio: ".$objeto->PRECIO." €</h4>";
       echo "</div>";
       echo "<div id='comprafestival'>";
-      echo "<a class='btn btn-success' href='#'>Comprar</a>";
+      echo '<td><a class="btn btn-success" title="comprar" href="compra.php?id='.$objeto->ID_EVENTO.'">Comprar</a></td>';
       echo "</div>";
       echo "<div id='titulofestival'>";
       echo "<h3>Artistas asistentes en el Evento</h3>";
@@ -65,12 +65,11 @@
     }
     ?>
 
-<div id='tablafestival'>
-    <div class="col-md-offset-6 col-md-6 text-center">
+    <div id='tablafestival' class="col-md-offset-6 col-md-6 text-center">
       <div class="table-responsive">
         <table class="table table-hover">
           <thead>
-            <tr class="warning">
+            <tr class="success">
               <th class="text-center">Nombre</th>
               <th class="text-center">WEB</th>
             </tr>
@@ -92,6 +91,8 @@
     }
     echo "</table>";
     echo "</div>";
+    echo "</div>";
+
 
 
       /*  //Cerramos el array.
