@@ -77,7 +77,7 @@
 
   <?php
 
-  $query2="SELECT artista.NOMBRE, artista.URL from artista join asiste on artista.ID_ARTISTA = asiste.ID_ARTISTA join eventos on asiste.ID_EVENTO = eventos.ID_EVENTO WHERE eventos.TIPO = 'festival' ";
+  $query2="SELECT artista.NOMBRE, artista.URL from artista join asiste on artista.ID_ARTISTA = asiste.ID_ARTISTA join eventos on asiste.ID_EVENTO = eventos.ID_EVENTO WHERE eventos.TIPO = 'festival' and eventos.NOMBRE='$id'";
 
   if ($result = $connection->query($query2)){
   while ($objeto = $result->fetch_object()) {
