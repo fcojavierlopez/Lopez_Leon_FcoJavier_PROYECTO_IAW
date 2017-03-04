@@ -20,12 +20,7 @@
       $id = $_GET['id'];
       $id2 = $_GET["id2"];
 
-        $connection = new mysqli('localhost', 'administrador', '2asirtriana', 'ventaentradas');
-
-        //comprobación de errores
-        if ($connection->connect_error) {
-         die("Error de conexión: ". $connection->connect_error);
-        }
+        include '../usuarios/conexion.php';
 
         $query2="SELECT NOMBRE, ID_EVENTO FROM eventos";
         $resultado = $connection->query($query2);
