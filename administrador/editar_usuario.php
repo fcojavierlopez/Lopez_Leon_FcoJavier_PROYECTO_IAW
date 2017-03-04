@@ -32,20 +32,14 @@ th {
         if ($_SESSION['TIPO_USUARIO']==NULL) {
           header ("Location: ../usuarios/index.html");
         }
-            //Hacemos la conexión.
-            $connection = new mysqli('localhost', 'administrador', '2asirtriana', 'ventaentradas');
 
-            //Comprobar que la conexión es correcta.
-            if ($connection->connect_errno) {
-                printf("Connection failed: %s\n", $connection->connect_error);
-                exit();
-            }
+          include '../usuarios/conexion.php';
 
             /*Consulta a la base de datos. Nos devuelve una serie de datos que será
             guardada en $resultado para más tarde ser recorrido.*/
             if ($resultado = $connection->query('SELECT CORREO_ELECTRONICO, FECHA_ALTA, EDAD, APELLIDOS, NOMBRE, TIPO_USUARIO FROM usuarios;')) {
       ?>
-      
+
       <div class="col-md-offset-5 col-md-5">
           <h2>USUARIOS</h2>
       </div>
