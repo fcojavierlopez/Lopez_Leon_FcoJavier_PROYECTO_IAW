@@ -13,16 +13,11 @@
 
       session_start();
 
-      $connection = new mysqli('localhost', 'administrador', '2asirtriana', 'ventaentradas');
-
-      //comprobación de errores
-      if ($connection->connect_error) {
-       die("Error de conexión: ". $connection->connect_error);
-      }
-
       if ($_SESSION['TIPO_USUARIO']==NULL) {
         header ("Location: ../usuarios/index.html");
       }
+
+      include '../usuarios/conexion.php';
 
       if (!isset($_POST["nombre"])){
 

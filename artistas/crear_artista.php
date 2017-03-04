@@ -41,7 +41,7 @@
          <?php else: ?>
          <?php
 
-         var_dump($_FILES);
+        //var_dump($_FILES);
          //Temp file. Where the uploaded file is stored temporary
          $tmp_file = $_FILES['imagen']['tmp_name'];
          //Dir where we are going to store the file
@@ -68,18 +68,14 @@
          }
 
          if ($valid) {
-           var_dump($target_file);
+          //  var_dump($target_file);
            //Put the file in its place
            move_uploaded_file($tmp_file, $target_file);
 
-          // variable que contiene la conexión a la BBDD.
-           $connection = new mysqli('localhost', 'administrador', '2asirtriana', 'ventaentradas');
+          include '../usuarios/conexion.php';
 
-           //comprobación de errores
-           if ($connection->connect_error) {
-            die("Error de conexión: ". $connection->connect_error);
-           }
           ?>
+
           <?php
 
           if (isset($_POST['send'])) {
@@ -93,7 +89,7 @@
 
               $query= "INSERT INTO artista (`NOMBRE`,`GENERO`,`DESCRIPCION`,`IMAGEN`,`URL`)
               VALUES('$nombre','$genero','$descripcion','".$_FILES['imagen']['name']."','$enlace')";
-              // var_dump($query);
+              //  var_dump($query);
 
               $result = $connection->query($query);
               // var_dump($result);
@@ -108,7 +104,7 @@
 
                 echo "<br>";
                 echo "<h3 class='text-center'>Error al añadir nuevo artista, inténtelo de nuevo.</h3>";
-                echo "<META HTTP-EQUIV='Refresh' CONTENT='5; URL=editar_artista.php'>";
+                // echo "<META HTTP-EQUIV='Refresh' CONTENT='5; URL=editar_artista.php'>";
               }
 
             }
