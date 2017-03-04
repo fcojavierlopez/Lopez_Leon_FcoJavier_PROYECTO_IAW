@@ -16,14 +16,7 @@
       header ("Location: ../usuarios/index.html");
     }
 
-    //Hacemos la conexión.
-    $connection = new mysqli('localhost', 'administrador', '2asirtriana', 'ventaentradas');
-
-    //Comprobar que la conexión es correcta.
-    if ($connection->connect_errno) {
-        printf("Connection failed: %s\n", $connection->connect_error);
-        exit();
-    }
+    include 'conexion.php';
 
     include 'barra_menu.php';
     echo "</div>";

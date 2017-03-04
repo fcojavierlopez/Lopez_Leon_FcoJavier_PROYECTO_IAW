@@ -17,13 +17,8 @@
 <?php
 session_start();
 
-//conexion
-$connection = new mysqli('localhost', 'administrador', '2asirtriana', 'ventaentradas');
+include 'conexion.php';
 
-//comprobación de errores
-if ($connection->connect_error) {
- die("Error de conexión: ". $connection->connect_error);
-}
 //Comprobacion de login
 if (isset($_POST['email'])) {
 

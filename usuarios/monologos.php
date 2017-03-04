@@ -29,14 +29,7 @@
 
     <?php
 
-    //Hacemos la conexión.
-    $connection = new mysqli('localhost', 'administrador', '2asirtriana', 'ventaentradas');
-
-    //Comprobar que la conexión es correcta.
-    if ($connection->connect_errno) {
-        printf("Connection failed: %s\n", $connection->connect_error);
-        exit();
-    }
+    include 'conexion.php';
 
     $query="SELECT artista.NOMBRE, artista.IMAGEN FROM eventos join asiste ON eventos.ID_EVENTO = asiste.ID_EVENTO
                                                                JOIN artista ON asiste.ID_ARTISTA = artista.ID_ARTISTA

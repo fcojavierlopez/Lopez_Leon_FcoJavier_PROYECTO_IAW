@@ -81,13 +81,8 @@
 
       <?php
 
-          //conexion a la base de datos
-          $connection = new mysqli("localhost", "administrador", "2asirtriana", "ventaentradas");
+        include 'conexion.php';
 
-         if ($connection->connect_errno) {
-          printf("Connection failed: %s\n", $connection->connect_error);
-        exit();
-   }
    $email=$_POST['email'];
    $edad=$_POST['edad'];
    $tipo='0';

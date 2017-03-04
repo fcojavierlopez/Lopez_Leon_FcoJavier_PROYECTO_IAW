@@ -13,12 +13,7 @@
          header ("Location: index.html");
        }
 
-      $connection = new mysqli('localhost', 'administrador', '2asirtriana', 'ventaentradas');
-
-      //comprobación de errores
-      if ($connection->connect_error) {
-       die("Error de conexión: ". $connection->connect_error);
-      }
+      include 'conexion.php';
 
       $idartista=$_GET['id'];
       $mail=$_SESSION['CORREO_ELECTRONICO'];
