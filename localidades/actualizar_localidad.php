@@ -20,12 +20,7 @@
 
       $id = $_GET['id'];
 
-        $connection = new mysqli('localhost', 'administrador', '2asirtriana', 'ventaentradas');
-
-        //comprobación de errores
-        if ($connection->connect_error) {
-         die("Error de conexión: ". $connection->connect_error);
-        }
+        include '../usuarios/conexion.php';
 
       if ($result = $connection->query("SELECT * from lugar
         where ID_LUGAR = '$id';")) {
