@@ -17,12 +17,8 @@
       if (!isset($_POST["evento"])) : ?>
 
       <?php
-      $connection = new mysqli('localhost', 'administrador', '2asirtriana', 'ventaentradas');
 
-      //comprobación de errores
-      if ($connection->connect_error) {
-       die("Error de conexión: ". $connection->connect_error);
-      }
+      include '../usuarios/conexion.php';
 
       $query2="SELECT eventos.NOMBRE, eventos.ID_EVENTO, lugar.LOCALIDAD FROM eventos join lugar on eventos.ID_LUGAR = lugar.ID_LUGAR";
       $resultado = $connection->query($query2);

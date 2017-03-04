@@ -29,14 +29,7 @@ th {
       header ("Location: ../usuarios/index.html");
     }
 
-    //Hacemos la conexión.
-    $connection = new mysqli('localhost', 'administrador', '2asirtriana', 'ventaentradas');
-
-    //Comprobar que la conexión es correcta.
-    if ($connection->connect_errno) {
-        printf("Connection failed: %s\n", $connection->connect_error);
-        exit();
-    }
+    include '../usuarios/conexion.php';
 
     if ($resultado = $connection->query('SELECT artista.NOMBRE, asiste.ID_ARTISTA, eventos.NOMBRE as NOMEVENTO, asiste.ID_EVENTO, eventos.TIPO, eventos.FECHA_INICIO, eventos.FECHA_FIN, lugar.LOCALIDAD
                                           FROM artista join asiste on artista.ID_ARTISTA = asiste.ID_ARTISTA
