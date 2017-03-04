@@ -29,14 +29,7 @@ th {
       header ("Location: ../usuarios/index.html");
     }
 
-    //Hacemos la conexión.
-    $connection = new mysqli('localhost', 'administrador', '2asirtriana', 'ventaentradas');
-
-    //Comprobar que la conexión es correcta.
-    if ($connection->connect_errno) {
-        printf("Connection failed: %s\n", $connection->connect_error);
-        exit();
-    }
+    include '../usuarios/conexion.php';
 
     if ($resultado = $connection->query('SELECT ID_EVENTO, NOMBRE, TIPO, PRECIO, URL, FECHA_INICIO, FECHA_FIN, lugar.LOCALIDAD
                                           FROM eventos join lugar on eventos.ID_LUGAR=lugar.ID_LUGAR;')) {

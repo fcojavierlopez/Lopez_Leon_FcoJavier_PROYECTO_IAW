@@ -17,12 +17,8 @@
       if (!isset($_POST["nombre"])) : ?>
 
       <?php
-      $connection = new mysqli('localhost', 'administrador', '2asirtriana', 'ventaentradas');
-
-      //comprobación de errores
-      if ($connection->connect_error) {
-       die("Error de conexión: ". $connection->connect_error);
-      }
+      
+      include '../usuarios/conexion.php';
 
       $query2="SELECT ID_LUGAR, LOCALIDAD, PROVINCIA FROM lugar";
 
