@@ -28,7 +28,7 @@
 
 
 
-      <div id='tablamusical' class="col-md-offset-7 col-md-6 text-center">
+      <div id='tablamusical' class="col-md-offset-6 col-md-7 text-center">
         <div class="table-responsive">
           <table class="table table-hover">
             <thead>

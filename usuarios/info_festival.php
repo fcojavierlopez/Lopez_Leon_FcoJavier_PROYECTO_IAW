@@ -88,10 +88,10 @@
 
 
 
-      /*  //Cerramos el array.
+        //Cerramos el array.
         $resultado->close();
         unset($objeto);
-        unset($connection);*/
+        unset($connection);
 
      ?>
 

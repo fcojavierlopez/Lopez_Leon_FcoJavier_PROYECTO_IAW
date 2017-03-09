@@ -23,9 +23,11 @@
     <br><br><br>
     <?php
 
-
+      echo "<div id='topmusic'>";
 
       echo "<h3 class='text-center'>TOP MUSIC</h3>";
+
+      echo "</div>";
 
       echo "<div id='carousel'>";
 
@@ -41,7 +43,7 @@
 
     echo "<div id='conciertohome'>";
 
-    echo "<h2 class='text-center'>Conciertos del momento</h2>";
+    echo "<h2 class='text-center'><a>Conciertos del momento</a></h2>";
 
       if ($resultado = $connection->query($query)){
           while ($objeto = $resultado->fetch_object()) {
@@ -49,7 +51,7 @@
           echo "<div class='artista'>";
 
 
-          echo "<center><img src='../img/img_artistas/$objeto->IMAGEN' />";
+          echo '<center><a href="info_artista.php?id='.$objeto->NOMBRE.'"><img class="img-responsive" src=../img/img_artistas/'.$objeto->IMAGEN.'></a>';
 
             echo'<h3><a href="info_artista.php?id='.$objeto->NOMBRE.'">'.$objeto->NOMBRE.'<a/></h3></center>';
           echo "</div>";
@@ -89,9 +91,10 @@
 
                 echo "<div class='artista'><center>";
 
-                echo "<center><img src='../img/img_artistas/$objeto->IMAGEN' />";
+                  echo '<center><a href="info_artista.php?id='.$objeto->NOMBRE.'"><img class="img-responsive" src=../img/img_artistas/'.$objeto->IMAGEN.'></a>';
 
                   echo'<h3><a href="info_artista.php?id='.$objeto->NOMBRE.'">'.$objeto->NOMBRE.'<a/></h3></center>';
+
                 echo "</div>";
                 }
               }
@@ -113,6 +116,7 @@
                   }
                 }
                 echo "</div>";
+
      ?>
 
      <script src="../js/jquery.js"></script>

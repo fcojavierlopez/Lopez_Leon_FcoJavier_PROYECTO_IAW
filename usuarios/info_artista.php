@@ -38,7 +38,7 @@
       echo "<h3>".$objeto->NOMBRE."</h3>";
       echo "</div>";
       echo "<div id='desc'>";
-      echo $objeto->DESCRIPCION."</center>";
+      echo "<p class='lead'>".$objeto->DESCRIPCION."</p></center>";
       echo "</div>";
 
 

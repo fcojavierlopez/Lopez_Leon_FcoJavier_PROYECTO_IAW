@@ -52,7 +52,7 @@ if ($_SESSION['TIPO_USUARIO']==NULL) {
   <li><a href="../artistas/editar_artista.php">Artistas</a></li>
   <li><a href="../eventos/editar_eventos.php">Eventos</a></li>
   <li><a href="../localidades/editar_localidades.php">Localidades</a></li>
-  <li><a href="../asiste/editar_asiste">Asistencias</a></li>
+  <li><a href="../asiste/editar_asiste.php">Asistencias</a></li>
   <li><a href="../compra/editar_compra.php">Compras</a></li>
 </ul>
 

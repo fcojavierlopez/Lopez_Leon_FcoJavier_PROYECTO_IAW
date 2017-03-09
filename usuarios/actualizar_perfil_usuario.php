@@ -67,7 +67,7 @@
         $apellidos=$_POST['apellidos'];
         $nombre=$_POST['nombre'];
 
-      $query="UPDATE `ventaentradas`.`usuarios` SET  `CORREO_ELECTRONICO` = '$email', `EDAD` = '$edad', `APELLIDOS`= '$apellidos', `NOMBRE`= '$nombre'
+      $query="UPDATE `usuarios` SET  `CORREO_ELECTRONICO` = '$email', `EDAD` = '$edad', `APELLIDOS`= '$apellidos', `NOMBRE`= '$nombre'
       WHERE `usuarios`.`CORREO_ELECTRONICO` = '$id'";
 
         if ($result = $connection->query($query))
