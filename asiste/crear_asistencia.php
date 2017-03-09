@@ -74,15 +74,10 @@
 
 	         </fieldset>
          <?php else: ?>
-         <?php
-           $connection = new mysqli('localhost', 'administrador', '2asirtriana', 'ventaentradas');
 
-           //comprobación de errores
-           if ($connection->connect_error) {
-            die("Error de conexión: ". $connection->connect_error);
-           }
-          ?>
           <?php
+
+          include '../usuarios/conexion.php';
 
           if (isset($_POST['send'])) {
 

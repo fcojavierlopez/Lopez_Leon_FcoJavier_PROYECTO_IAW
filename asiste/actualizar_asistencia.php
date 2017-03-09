@@ -63,6 +63,7 @@
           <br><br><br><br>
 
           <span>Artistas</span>
+          <br>
           <select id="artista" name="artista" class = "artista" required>
             <?php
             while ( $row2 = $resultado2->fetch_array() )
@@ -105,7 +106,7 @@
         $evento=$_POST['evento'];
         $artista=$_POST['artista'];
 
-      $query="UPDATE `ventaentradas`.`asiste` SET  `ID_EVENTO` = '$evento', `ID_ARTISTA` = '$artista'
+      $query="UPDATE `asiste` SET  `ID_EVENTO` = '$evento', `ID_ARTISTA` = '$artista'
       WHERE `asiste`.`ID_EVENTO` = '$id' and `asiste`.`ID_ARTISTA` = '$id2'";
 
         if ($result = $connection->query($query))
