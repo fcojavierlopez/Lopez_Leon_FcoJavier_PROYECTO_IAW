@@ -86,7 +86,7 @@
         $evento=$_POST['evento'];
         $numentradas=$_POST['numentradas'];
 
-      $query="UPDATE `ventaentradas`.`compra` SET  `CORREO_ELECTRONICO` = '$email', `ID_EVENTO` = '$evento', `NUMERO_ENTRADAS`= '$numentradas'
+      $query="UPDATE `compra` SET  `CORREO_ELECTRONICO` = '$email', `ID_EVENTO` = '$evento', `NUMERO_ENTRADAS`= '$numentradas'
       WHERE `compra`.`CORREO_ELECTRONICO` = '$id' and `compra`.`ID_EVENTO` = '$id2'";
 
         if ($result = $connection->query($query))
