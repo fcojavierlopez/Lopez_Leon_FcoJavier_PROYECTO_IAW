@@ -76,8 +76,9 @@
         $nombre=$_POST['nombre'];
         $tipo=$_POST['tipo'];
 
-      $query="UPDATE `ventaentradas`.`usuarios` SET  `CORREO_ELECTRONICO` = '$email', `PASSWD` =md5('$passwd'), `EDAD` = '$edad', `APELLIDOS`= '$apellidos', `NOMBRE`= '$nombre', `TIPO_USUARIO`= '$tipo'
+      $query="UPDATE `usuarios` SET  `CORREO_ELECTRONICO` = '$email', `PASSWD` =md5('$passwd'), `EDAD` = '$edad', `APELLIDOS`= '$apellidos', `NOMBRE`= '$nombre', `TIPO_USUARIO`= '$tipo'
       WHERE `usuarios`.`CORREO_ELECTRONICO` = '$id'";
+
 
         if ($result = $connection->query($query))
            {
