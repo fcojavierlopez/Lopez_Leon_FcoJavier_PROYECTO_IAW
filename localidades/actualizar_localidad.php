@@ -68,7 +68,7 @@
         $latitud=$_POST['latitud'];
         $longitud=$_POST['longitud'];
 
-      $query="UPDATE `ventaentradas`.`lugar` SET  `ID_LUGAR` = '$idlugar', `LOCALIDAD` = '$localidad', `PROVINCIA`= '$provincia', `PAIS`= '$pais', `LATITUD`= '$latitud', `LONGITUD`= '$longitud'
+      $query="UPDATE `lugar` SET  `ID_LUGAR` = '$idlugar', `LOCALIDAD` = '$localidad', `PROVINCIA`= '$provincia', `PAIS`= '$pais', `LATITUD`= '$latitud', `LONGITUD`= '$longitud'
       WHERE `lugar`.`ID_LUGAR` = '$id'";
 
         if ($result = $connection->query($query))
