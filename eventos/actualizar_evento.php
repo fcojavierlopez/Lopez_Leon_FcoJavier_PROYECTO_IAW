@@ -98,7 +98,7 @@
         $ff=$_POST['ff'];
         $idlugar=$_POST['lugar'];
 
-      $query="UPDATE `ventaentradas`.`eventos` SET  `ID_EVENTO` = '$idevento', `NOMBRE` = '$nombre', `TIPO`= '$tipo', `PRECIO`= '$precio', `URL`= '$enlace', `FECHA_INICIO`= '$fi', `FECHA_FIN`= '$ff', `ID_LUGAR`= '$idlugar'
+      $query="UPDATE `eventos` SET  `ID_EVENTO` = '$idevento', `NOMBRE` = '$nombre', `TIPO`= '$tipo', `PRECIO`= '$precio', `URL`= '$enlace', `FECHA_INICIO`= '$fi', `FECHA_FIN`= '$ff', `ID_LUGAR`= '$idlugar'
       WHERE `eventos`.`ID_EVENTO` = '$id'";
 
         if ($result = $connection->query($query))
