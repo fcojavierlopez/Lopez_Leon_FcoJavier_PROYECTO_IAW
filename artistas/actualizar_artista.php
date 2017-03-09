@@ -113,7 +113,7 @@
 
           $id2=$_POST['id'];
 
-      $query="UPDATE `ventaentradas`.`artista` SET  `ID_ARTISTA` = '$idartista', `NOMBRE` = '$nombre', `GENERO`= '$genero', `DESCRIPCION`= '$descripcion',`IMAGEN`='".$_FILES['imagen']['name']."', `URL`= '$enlace'
+      $query="UPDATE `artista` SET  `ID_ARTISTA` = '$idartista', `NOMBRE` = '$nombre', `GENERO`= '$genero', `DESCRIPCION`= '$descripcion',`IMAGEN`='".$_FILES['imagen']['name']."', `URL`= '$enlace'
       WHERE `artista`.`ID_ARTISTA` = '$id2'";
 
       var_dump($query);
